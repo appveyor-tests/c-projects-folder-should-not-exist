@@ -4,10 +4,10 @@ init:
   - ps: |
       if (Test-Path C:\Projects) {
         Write-Host "Folder exists"
-        exit 0
+        exit 1
       } else {
         Write-Host "Folder doesn't exist"
-        exit 1
+        exit 0
       }
       if($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
