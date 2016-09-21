@@ -1,12 +1,12 @@
 version: 1.0.{build}
 
 init:
-  -ps if (Test-Path C:\Projects) {
+  -ps: if (Test-Path C:\Projects) {
   exit 1
   } else {
   exit 0
   }
-  -ps if($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+  -ps: if($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
 
 build: off
