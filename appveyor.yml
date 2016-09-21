@@ -2,7 +2,7 @@ version: 1.0.{build}
 
 init:
   - ps: |
-      if (Test-Path C:\projects) {
+      if (Test-Path -Path C:\Projects) {
         Write-Host "Folder exists"
         exit 1
       } else {
