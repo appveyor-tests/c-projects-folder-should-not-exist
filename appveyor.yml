@@ -7,7 +7,6 @@ init:
     } else {
       exit 0
     }
-  -ps: |
     if($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
 
