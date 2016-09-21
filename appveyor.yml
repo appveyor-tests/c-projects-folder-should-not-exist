@@ -12,5 +12,4 @@ init:
     if($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
 
-build: off
   
