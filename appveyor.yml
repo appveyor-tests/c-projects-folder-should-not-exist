@@ -17,7 +17,6 @@ init:
         Write-Host "Projects folder missing completely"
         exit 1
       }
-      Write
       if($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
 
