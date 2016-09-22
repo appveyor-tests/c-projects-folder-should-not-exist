@@ -8,9 +8,8 @@ init:
         Write-Host $Dir
         if ($Dir -ceq $Path){
             Write-Host "Correct case"
-            exit 0
           }
-        else{
+        else {
             Write-Host "Case error"
             exit 1
           }
@@ -18,6 +17,7 @@ init:
         Write-Host "Projects folder missing completely"
         exit 1
       }
+      Write
       if($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
 
