@@ -4,8 +4,8 @@ init:
   - ps: |
       $Path = "c:\projects"
       if ((Test-Path $Path)) {
-        $Dir = dir $Path
-        if ($Dir.name -ceq $Path){
+        $Dir = (Get-Item "C:\project[S]").Fullname
+        if ($Dir -ceq $Path){
             Write-Host "Correct case"
             exit 0
           }#
