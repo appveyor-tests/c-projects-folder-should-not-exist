@@ -2,11 +2,20 @@ version: 1.0.{build}
 
 init:
   - ps: |
-      if (Test-Path -Path C:\Projects) {
-        Write-Host "Folder exists"
-        exit 1
+      $Path = c:\projects
+      if ((Test-Path $Path)) {
+        $Dir = dir $Path
+        if ($Dir.name -ceq $Path){
+            Write-Host "Correct case"
+            exit 0
+          }#
+        else{
+            Write-Host "Case error"
+            exit 1
+          }
       } else {
-        Write-Host "Folder doesn't exist"
+        Write-Host "Projects folder missing completely"
+        exit 1
       }
       if($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
