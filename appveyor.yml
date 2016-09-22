@@ -2,7 +2,7 @@ version: 1.0.{build}
 
 init:
   - ps: |
-      $Path = "c:\projects"
+      $Path = "c:\Projects"
       if ((Test-Path $Path)) {
         $Dir = (Get-Item "C:\project[S]").Fullname
         if ($Dir -ceq $Path){
