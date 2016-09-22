@@ -5,10 +5,11 @@ init:
       $Path = "C:\Projects"
       if ((Test-Path $Path)) {
         $Dir = (Get-Item "C:\project[S]").Fullname
+        Write-Host $Dir
         if ($Dir -ceq $Path){
             Write-Host "Correct case"
             exit 0
-          }#
+          }
         else{
             Write-Host "Case error"
             exit 1
