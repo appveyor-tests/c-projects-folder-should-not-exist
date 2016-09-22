@@ -2,7 +2,7 @@ version: 1.0.{build}
 
 init:
   - ps: |
-      $Path = "C:\Projects"
+      $Path = "C:\projects"
       if ((Test-Path $Path)) {
         $Dir = (Get-Item "C:\project[S]").Fullname
         Write-Host $Dir
