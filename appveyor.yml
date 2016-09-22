@@ -2,7 +2,7 @@ version: 1.0.{build}
 
 init:
   - ps: |
-      $Path = c:\projects
+      $Path = "c:\projects"
       if ((Test-Path $Path)) {
         $Dir = dir $Path
         if ($Dir.name -ceq $Path){
