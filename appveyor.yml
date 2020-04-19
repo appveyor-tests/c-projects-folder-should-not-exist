@@ -1,9 +1,8 @@
 version: 1.0.{build}
 
-test_script:
+init:
   - ps: |
       $ErrorActionPreference = "Stop"
-      dir "$env:SystemDrive\"
       $path = "$env:SystemDrive\Projects"
       if (Test-Path $path) { throw "$path should not exist!" }
       
