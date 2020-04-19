@@ -5,9 +5,7 @@ init:
       $ErrorActionPreference = "Stop"
       $path = "$env:SystemDrive\Projects"
       $dirs = (Get-ChildItem $path)
-      $dirs.length
-      $dirs[0].FullPath
-      if ($dirs.length -gt 1 -or $dirs[0].FullPath -ne $env:APPVEYOR_BUILD_FOLDER) { throw "$path contents has something else!" }
+      if ($dirs.length -gt 1 -or $dirs[0].FullName -ne $env:APPVEYOR_BUILD_FOLDER) { throw "$path contents has something else!" }
       
       # bonus
       dir "$env:USERPROFILE"
