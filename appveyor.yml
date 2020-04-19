@@ -4,7 +4,8 @@ init:
   - ps: |
       $ErrorActionPreference = "Stop"
       $path = "$env:SystemDrive\Projects"
-      if (Test-Path $path) { throw "$path should not exist!" }
+      $dirs = (Get-ChildItem $path)
+      if ($dirs.length -gt 1 -or $dirs[0].FullPath -ne $env:APPVEYOR_BUILD_FOLDER) { throw "$path contents has something else!" }
       
       # bonus
       dir "$env:USERPROFILE"
